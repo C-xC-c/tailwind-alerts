@@ -1,6 +1,6 @@
 {
   "name": "@c-xc-c/tailwind-alerts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Bootstrap alerts as a Tailwind plugin",
   "main": "index.js",
   "author": "C-xC-c",
