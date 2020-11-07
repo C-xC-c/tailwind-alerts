@@ -1,11 +1,14 @@
 {
-  "name": "tailwind-alerts",
-  "version": "1.0.0",
+  "name": "@c-xc-c/tailwind-alerts",
+  "version": "1.0.1",
   "description": "Bootstrap alerts as a Tailwind plugin",
   "main": "index.js",
   "author": "C-xC-c",
   "license": "MIT",
   "dependencies": {
     "tailwindcss": "^1.9.6"
-  }
+  },
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	}
 }

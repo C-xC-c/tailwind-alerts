@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
 	plugins: [
-		plugin(function({ addComponents })) {
+		plugin(function({ addComponents }) {
 			const alerts = {
 				'.alert': {
 					padding: '.75rem 1.25rem';
@@ -51,6 +51,6 @@ module.exports = {
 					borderColor: '#c6c8ca';
 				}
 			}
-		}
+		})
 	]
 }
