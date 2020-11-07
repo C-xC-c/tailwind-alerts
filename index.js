@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin');
 
-module.exports = function({ addComponents }) {
+module.exports = function({ addComponents, theme, e }) {
 	const alerts = {
 		'.alert': {
 			padding: '.75rem 1.25rem',
@@ -47,7 +47,36 @@ module.exports = function({ addComponents }) {
 			color: '#1b1e21',
 			backgroundColor: '#d6d8d9',
 			borderColor: '#c6c8ca',
-		}
-	}
-	addComponents(alerts)
-}
+		},
+		'.alert-link': { fontWeight: '700' },
+		'.alert-primary .alert-link': { color: '#002752' },
+		'.alert-secondary .alert-link': { color: '#202326' },
+		'.alert-success .alert-link': { color: '#0b2e13' },
+		'.alert-info .alert-link': { color: '#062c33' },
+		'.alert-danger .alert-link': { color: '#491217' },
+		'.alert-warning .alert-link': { color: '#533f03' },
+		'.alert-light .alert-link': { color: '#686868' },
+		'.alert-dark .alert-link': { color: '#040505' }
+	};
+
+	let arr = [];
+	
+	Object.entries(theme('alerts', {})).forEach(([key, value]) => {
+		arr.push({
+			[`.alert-${e(key)}`]: {
+				color: value[0],
+				backgroundColor: value[1],
+				borderColor: value[2]
+			},
+		});
+		value.length >= 4 && arr.push({
+			[`.alert-${e(key)} .alert-link`]: {
+				color: value[3]
+			}
+		});
+	});
+	
+	addComponents(alerts);
+	addComponents(arr);
+};
+
