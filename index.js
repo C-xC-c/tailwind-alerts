@@ -51,6 +51,7 @@ module.exports = {
 					borderColor: '#c6c8ca',
 				}
 			}
+			addComponents(alerts)
 		})
 	]
 }
